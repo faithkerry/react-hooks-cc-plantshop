@@ -15,4 +15,4 @@ function Search({ search, setSearch }) {
   );
 }
 
-
+export default Search;
