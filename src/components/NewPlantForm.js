@@ -64,4 +64,4 @@ function NewPlantForm({ onAddPlant }) {
   );
 }
 
-
+export default NewPlantForm;
