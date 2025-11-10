@@ -19,4 +19,23 @@ function PlantPage() {
     setPlants([...plants, newPlant]);
   }
 
+   // 3️⃣ Filter plants by search term
+  const filteredPlants = plants.filter((plant) =>
+    plant.name.toLowerCase().includes(search.toLowerCase())
+  );
+
+  return (
+    <main>
+      {/* Pass callback to handle adding new plants */}
+      <NewPlantForm onAddPlant={handleAddPlant} />
+
+      {/* Pass search and setter to Search */}
+      <Search search={search} setSearch={setSearch} />
+
+      {/* Pass filtered plants to PlantList */}
+      <PlantList plants={filteredPlants} />
+    </main>
+  );
+}
+
   
