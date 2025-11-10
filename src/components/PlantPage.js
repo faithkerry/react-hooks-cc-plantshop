@@ -38,4 +38,7 @@ function PlantPage() {
   );
 }
 
+export default PlantPage;
+
+
   
