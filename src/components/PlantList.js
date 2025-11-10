@@ -16,3 +16,4 @@ function PlantList({ plants }) {
   );
 }
 
+export default PlantList;
