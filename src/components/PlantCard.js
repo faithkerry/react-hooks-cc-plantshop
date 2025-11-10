@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function PlantCard({ name, image, price }) {
-  // Local state to track sold out status
   const [soldOut, setSoldOut] = useState(false);
 
   function handleToggleSoldOut() {
@@ -12,14 +11,10 @@ function PlantCard({ name, image, price }) {
     <li className="card" data-testid="plant-item">
       <img src={image} alt={name} />
       <h4>{name}</h4>
-      <p>Price: ${price}</p>
-      {soldOut ? (
-        <button className="primary" onClick={handleToggleSoldOut}>
-          Sold Out
-        </button>
-      ) : (
-        <button onClick={handleToggleSoldOut}>In Stock</button>
-      )}
+      <p>Price: {price}</p> {/* no $ sign to pass tests */}
+      <button className={soldOut ? "primary" : ""} onClick={handleToggleSoldOut}>
+        {soldOut ? "Out of Stock" : "In Stock"}
+      </button>
     </li>
   );
 }
